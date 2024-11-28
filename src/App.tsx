@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { Sidebar } from './components/Sidebar';
-// import { Canvas } from './components/Canvas'; //
-// import { EditPanel } from './components/EditPanel';
+import { Sidebar } from './components/Sidebar'; // Ismail
+import { Canvas } from './components/Canvas'; //  Killian
+import { EditPanel } from './components/EditPanel'; // Louis
 import { CanvasComponent } from './types';
 
 function App() {
@@ -43,13 +43,13 @@ function App() {
   return (
     <div className="flex">
       <Sidebar onAddComponent={handleAddComponent} />
-      {/* <Canvas 
+      {/* Killian <Canvas 
         components={components} 
         onUpdateComponent={handleUpdateComponent}
         onSelectComponent={handleSelectComponent}
         selectedId={selectedComponent?.id ?? null}
-      />
-      <EditPanel 
+      /> */}
+      {/* Louis <EditPanel   
         component={selectedComponent}
         onUpdate={(updates) => 
           selectedComponent && handleUpdateComponent(selectedComponent.id, updates)
