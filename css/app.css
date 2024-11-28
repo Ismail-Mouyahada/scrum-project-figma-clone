@@ -1,0 +1,153 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+    
+.canvas-component {
+    position: absolute;
+    background: white;
+    border: 1px solid #e2e8f0;
+    padding: 20px;
+    min-width: 150px;
+    min-height: 80px;
+    cursor: move;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: all 0.2s ease;
+}
+
+.canvas-component:hover {
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    transform: translateY(-1px);
+}
+
+.canvas-component .controls {
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    position: absolute;
+    top: -40px;
+    right: 0;
+    background: white;
+    padding: 8px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    gap: 8px;
+}
+
+.canvas-component:hover .controls,
+.canvas-component:focus-within .controls {
+    opacity: 1;
+}
+
+.canvas-component:not(:hover):not(:focus-within) .controls,
+.canvas-component:not(:hover):not(:focus-within) button:not(.carousel-nav),
+.canvas-component:not(:hover):not(:focus-within) input:not([type="file"]),
+.canvas-component:not(:hover):not(:focus-within) .image-buttons,
+.canvas-component:not(:hover):not(:focus-within) .image-upload {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.canvas-component input[type="text"], 
+.canvas-component input[type="number"],
+.canvas-component select {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    background: white;
+}
+
+.canvas-component input[type="text"]:focus,
+.canvas-component input[type="number"]:focus,
+.canvas-component select:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99,102,241,0.1);
+    outline: none;
+}
+
+.canvas-component button {
+    transition: all 0.2s ease-in-out;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.canvas-component button:active {
+    transform: scale(0.98);
+}
+
+.canvas-component button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.carousel {
+    width: 100%;
+    min-width: 300px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #f8fafc;
+}
+
+.carousel-slides {
+    position: relative;
+}
+
+.carousel-slide {
+    padding: 20px;
+    background: white;
+    border: 1px solid #e2e8f0;
+    min-height: 200px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.carousel-slide img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.ripple {
+    position: relative;
+    overflow: hidden;
+}
+
+.ripple:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background-image: radial-gradient(circle, #fff 10%, transparent 10.01%);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    transform: scale(10, 10);
+    opacity: 0;
+    transition: transform .5s, opacity 1s;
+}
+
+.ripple:active:after {
+    transform: scale(0, 0);
+    opacity: .3;
+}
+
+.canvas-component .controls,
+.canvas-component button:not(.carousel-nav),
+.canvas-component input:not([type="file"]),
+.canvas-component .image-buttons,
+.canvas-component .image-upload {
+    transition: all 0.2s ease-in-out;
+}
